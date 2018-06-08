@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 2.8)
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+project(01_proba)
+add_subdirectory(tests)
+add_subdirectory(src)
