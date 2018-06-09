@@ -13,3 +13,18 @@ int get_digit(int number, uint k)
         return (-1);
     }
 }
+
+int mirror_left2right(int number)
+{
+    // mirror_left2right(12)   -> 11
+    // mirror_left2right(123)  -> 121
+    // mirror_left2right(1234) -> 1221
+    int num_digits = log10(number) + 1;
+    std::string s_number = std::to_string(number);
+    std::string s_mirrored(s_number);
+    std::reverse(s_number.begin(),s_number.end());
+    for(int ii=num_digits-1;ii>=num_digits/2;--ii) {
+        s_mirrored[ii] = s_number[ii];
+    }
+    return std::stoi(s_mirrored);
+}
