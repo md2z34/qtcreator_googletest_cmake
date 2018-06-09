@@ -28,3 +28,22 @@ int mirror_left2right(int number)
     }
     return std::stoi(s_mirrored);
 }
+
+bool is_palindrome(int num)
+{
+    std::string s_number = std::to_string(num);
+    std::string s_mirrored(s_number);
+    std::reverse(s_mirrored.begin(),s_mirrored.end());
+    return (s_number == s_mirrored);
+}
+
+int find_closest_palindrome(int num)
+{
+    for (int ii=1;ii<15;++ii){
+        if (num == pow(10,ii)) {
+            return pow(10,ii)-1;
+        }
+    }
+    return mirror_left2right(num);
+}
+

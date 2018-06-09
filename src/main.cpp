@@ -4,19 +4,16 @@ using namespace std;
 
 int main()
 {
-    int T;
-    int szam;
     vector<int> N;
-    int a = mirror_left2right(123456);
-    int b = mirror_left2right(1234567);
-    int c = mirror_left2right(8);
-    cout << "Input:" << endl;
-    cin >> T;
+    N.push_back(23);
+    N.push_back(1234567);
+    N.push_back(100);
+    N.push_back(10000);
 
-    for (int i=0;i<T;++i){
-        cin >> szam;
-        N.push_back(szam);
+    for (auto it=N.begin();it!=N.end();++it) {
+        int cp=find_closest_palindrome(*it);
+        cout << "Closest palindrome of " << *it << " is " << cp << ". Difference " << abs(cp-*it) << endl;
     }
-    cout << "End of execution" << endl;
+
     return 0;
 }
